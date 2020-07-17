@@ -24,7 +24,9 @@ public class SpreadsheetEvaluator {
     private SpreadsheetData<String> rawData;
 
     /**
-     * Performs the evaluation of the spreadsheet interpreting the formulas in RPN format and their references
+     * Performs the evaluation of the spreadsheet interpreting the formulas in
+     * RPN format and their references
+     *
      * @param rawData The spreadsheet being evaluated
      * @return The evaluated spreadsheet
      * @throws SpreadsheetException If there is a syntax or reference error
@@ -79,12 +81,16 @@ public class SpreadsheetEvaluator {
         if (stack.empty()) {
             throw new SpreadsheetException("Syntax error.");
         }
-
         String value = stack.pop();
 
+        //
         //number
-        if (Character.isDigit(value.charAt(0))) {
-            return Double.parseDouble(value);
+        if (Character.isDigit(value.charAt(0)) || ((value.charAt(0) == '-') && Character.isDigit(value.charAt(1)))) {
+            try {
+                return Double.parseDouble(value);
+            } catch (NumberFormatException e) {
+                throw new SpreadsheetException("Invalid number representation: " + value);
+            }
         }
 
         //reference
@@ -100,6 +106,16 @@ public class SpreadsheetEvaluator {
             return v;
         }
 
+        //unary expression
+        //inc
+        if (value.equals("++")) {
+            return evalrpn(stack, previousRefs) + 1;
+        }
+        //dec
+        if (value.equals("--")) {
+            return evalrpn(stack, previousRefs) - 1;
+        }
+
         //expression
         Double y = evalrpn(stack, previousRefs);
         Double x = evalrpn(stack, previousRefs);
@@ -113,7 +129,7 @@ public class SpreadsheetEvaluator {
             case '/':
                 return x / y;
             default:
-                throw new SpreadsheetException("Invalid operation: " + value + ". The supported operations are +, -, *, /.");
+                throw new SpreadsheetException("Invalid operation: " + value + ". The supported operations are +, -, *, /, ++, --.");
         }
     }
 

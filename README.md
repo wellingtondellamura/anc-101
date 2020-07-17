@@ -3,12 +3,10 @@
 **This is a spreadsheet formula evaluator**
 
 
-
-
 ## Build🔨
 
-Please use Apache Ant [https://ant.apache.org/](https://ant.apache.org/) to build this project. 
-* Oracle JDK 1.5+ is the only dependency necessary to compile the source code.
+Please use Apache Ant ([https://ant.apache.org/](https://ant.apache.org/)) to build this project. 
+* Oracle JDK 1.5+ ([https://www.oracle.com/](https://www.oracle.com/technetwork/pt/java/javase/downloads/index.html)) is the only dependency necessary to compile the source code.
 
 
 **How to build**
