@@ -84,7 +84,7 @@ public class SpreadsheetData<T> {
      * C stands for the position of a column. For example: A1
      * @param cellName The cell reference
      * @return The cell value at the specified position
-     * @throws SpreadsheetException 
+     * @throws SpreadsheetException In the case of an invalid position
      */
     public T getData(String cellName) throws SpreadsheetException {
         if (cellName == null || cellName.length() < 2) {
