@@ -1,0 +1,1 @@
+cat spreadsheet.txt | java -jar dist/anc101.jar
