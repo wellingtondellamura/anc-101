@@ -7,31 +7,31 @@
 
 Please use Apache Ant ([https://ant.apache.org/](https://ant.apache.org/)) to build this project. 
 
-**Dependencies:** Oracle JDK 1.5+ ([https://www.oracle.com/](https://www.oracle.com/technetwork/pt/java/javase/downloads/index.html)) .
+**Dependencies:** 
+Oracle JDK 1.5+ ([https://www.oracle.com/](https://www.oracle.com/technetwork/pt/java/javase/downloads/index.html)) or equivalent.
 
 
 ### How to build
 
-Using the following command inside the project root folder will compile all sorce code.
+Using the following command inside the project root folder will compile all source code.
 ```
 ant -f build.xml
 ```
+
 ### Generated files
 
-* 📁 build: contains the compiled code 
-* 📁 dist: contains the compiled code in jar format
-* 📁 dist/javadoc/: contains the generated documentation of the source code
-
-
+* 📁 **build:** contains the compiled code 
+* 📁 **dist:** contains the compiled code in jar format
+* 📁 **dist/javadoc/:** contains the generated documentation of the source code
 
 ## Run ⚙
 
 After build this project, you can run the tool in the following ways:
 
-1. **Using the compiled code**: Acessing the build/classes folder
+1. **Using the compiled code**: Into _build/classes_ folder
    
    `$ cat spreadsheet.txt | java anc101.Spreadsheet`
-2. **Using the jar file**: Acessing the dist folder
+2. **Using the jar file**: Into the _dist_ folder
    
    `$ cat spreadsheet.txt | java -jar "anc101.jar"`
 
