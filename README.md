@@ -6,16 +6,17 @@
 ## Build🔨
 
 Please use Apache Ant ([https://ant.apache.org/](https://ant.apache.org/)) to build this project. 
-*Dependencies:* Oracle JDK 1.5+ ([https://www.oracle.com/](https://www.oracle.com/technetwork/pt/java/javase/downloads/index.html)) .
+
+**Dependencies:** Oracle JDK 1.5+ ([https://www.oracle.com/](https://www.oracle.com/technetwork/pt/java/javase/downloads/index.html)) .
 
 
-**How to build**
+### How to build
 
 Using the following command inside the project root folder will compile all sorce code.
 ```
 ant -f build.xml
 ```
-**Generated files**
+### Generated files
 
 * 📁 build: contains the compiled code 
 * 📁 dist: contains the compiled code in jar format
@@ -38,7 +39,7 @@ After build this project, you can run the tool in the following ways:
    
     `$ ./run.sh spreadsheet.txt"`
 
-**Important** 
+### Important
 
 Consider `spreadsheet.txt` the filename of the spreadsheet file that you want to process. 
 
